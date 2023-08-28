@@ -10,7 +10,7 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 
-def Read():
+def read():
     mycursor.execute("SELECT * FROM buku")
     myresult = mycursor.fetchall()
 
@@ -22,7 +22,7 @@ def Read():
         if ex in ["y","Y"]:
             break
 
-def Create():
+def create():
     print("===Masukkan data===")
     while True:
         try:
@@ -53,7 +53,7 @@ def Create():
         if ex in ["y","Y"]:
             break
 
-def Update():
+def update():
     mycursor.execute("SELECT * FROM buku")
     myresult = mycursor.fetchall()
     t = 0
@@ -108,7 +108,7 @@ def Update():
         if ex in ["y","Y"]:
             break
 
-def Delete():
+def delete():
     mycursor.execute("SELECT id_kolom,nama_buku,penulis,jumlah FROM buku")
     myresult = mycursor.fetchall()
     t = 0
