@@ -23,13 +23,13 @@ if __name__ == "__main__":
 
         user_option = input("Masukkan piihan anda = ")
         if user_option == "1":
-            CRUD.Create()
+            CRUD.create()
         elif user_option == "2":
-            CRUD.Read()
+            CRUD.read()
         elif user_option == "3":
-            CRUD.Update()
+            CRUD.update()
         elif user_option == "4":
-            CRUD.Delete()
+            CRUD.delete()
         else:
             print("Masukkan pilihan dengan benar")
 
