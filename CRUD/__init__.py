@@ -1,1 +1,1 @@
-from .Operasi import Create,Read,Update,Delete
+from .Operasi import create,read,update,delete
