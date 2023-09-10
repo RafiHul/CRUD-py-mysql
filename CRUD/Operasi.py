@@ -10,7 +10,7 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 
-def read():
+def Read():
     mycursor.execute("SELECT * FROM buku")
     myresult = mycursor.fetchall()
 
@@ -22,11 +22,11 @@ def read():
         if ex in ["y","Y"]:
             break
 
-def create():
+def Create():
     print("===Masukkan data===")
     while True:
         try:
-            id_kolom = int(input("Masukkan id_kolom : "))
+            id_kolom = int(input("Masukkan id kolom : "))
             break
         except:
             print("Masukkan format angka yang benar")
@@ -53,7 +53,7 @@ def create():
         if ex in ["y","Y"]:
             break
 
-def update():
+def Update():
     mycursor.execute("SELECT * FROM buku")
     myresult = mycursor.fetchall()
     t = 0
@@ -108,17 +108,18 @@ def update():
         if ex in ["y","Y"]:
             break
 
-def delete():
+def Delete():
     mycursor.execute("SELECT id_kolom,nama_buku,penulis,jumlah FROM buku")
     myresult = mycursor.fetchall()
     t = 0
     for i in myresult:
         print(i)
+        print(i[2])
         t += 1
 
     while True:
         try:
-            pilih_data = int(input("Pilih nomor data yang ingin di update : "))
+            pilih_data = int(input("Pilih nomor data yang ingin di delete : "))
             if pilih_data > t:
                 print("Nomer data tidak ada di dalam tabel")
             else:
@@ -127,7 +128,7 @@ def delete():
             print("masukkan id_kolom yang benar")
 
     sql = "DELETE FROM buku WHERE id_kolom = %s"
-    val = (pilih_data)
+    val = (pilih_data,)
 
     try:
         mycursor.execute(sql,val)
